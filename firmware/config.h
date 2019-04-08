@@ -2,24 +2,28 @@
 #ifndef AKTORS_H_
 #define AKTORS_H_
 
-#include "application.h"
+//#include "application.h"
+#include "Arduino.h"
 #include "log_backup.h"
 #include "stdint.h"
 #include "led.h"
-#include "wifi_login.h"
+//#include "wifi_login.h"
 #include "rest_client.h"
 
 #define UPDATECARD 1234567890
 
 #define MAX_JUMPER_PIN 6 // 2^(6+1)-1=127
 
-#define DB_LED_AND_UPDATE_PIN   D0
-#define TAG_IN_RANGE_INPUT      D1
-#define ANTENNA_PIN             D2
-#define RELAY_PIN               D3
-#define RED_LED_PIN             D4
-#define READ_BACK_PIN           D5
-#define GREEN_LED_PIN           D6
+#define system_event_t uint64_t
+
+// was: D <X>
+#define DB_LED_AND_UPDATE_PIN   0
+#define TAG_IN_RANGE_INPUT      1
+#define ANTENNA_PIN             2
+#define RELAY_PIN               3
+#define RED_LED_PIN             4
+#define READ_BACK_PIN           5
+#define GREEN_LED_PIN           6
 
 // storage design:  valid adresses are 0-2047
 // [0..3] key 1
@@ -92,4 +96,3 @@ uint8_t get_my_id();
 bool fire_report(uint8_t event,uint32_t badge,uint32_t extrainfo);
 
 #endif
-
