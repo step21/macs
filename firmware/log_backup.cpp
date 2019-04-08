@@ -1,4 +1,7 @@
 #include "config.h"
+//#include "spark_wiring_ipaddress.h"
+#include <SPI.h>
+#include <Ethernet.h>
 
 BACKUP::BACKUP(){
     m_position=0;

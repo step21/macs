@@ -1,10 +1,13 @@
 #ifndef __HTTP_CLIENT_H_
 #define __HTTP_CLIENT_H_
 
-#include "application.h"
-#include "spark_wiring_string.h"
-#include "spark_wiring_tcpclient.h"
-#include "spark_wiring_usbserial.h"
+//#include "application.h"
+//#include "spark_wiring_string.h"
+//#include "spark_wiring_tcpclient.h"
+//#include "spark_wiring_usbserial.h"
+//#include "spark_wiring_ipaddress.h"
+#include <SPI.h>
+#include <Ethernet.h>
 
 /**
  * Defines for the HTTP methods.
@@ -59,7 +62,7 @@ public:
     /**
     * Public references to variables.
     */
-    TCPClient client;
+    EthernetClient client;
     char buffer[1024];
 
     /**
@@ -127,4 +130,3 @@ private:
 };
 
 #endif /* __HTTP_CLIENT_H_ */
-
